@@ -17,8 +17,22 @@
 </body>
 
 <script type="text/babel">
+
+    let message = "This is react component";
+    let my_class = "my-class-name";
+
     const main = () => {
-        return <div>This is React Component.</div>
+        return (
+            // JSX comment
+            <div className={my_class}> 
+                <p>{message}</p> 
+                <p>{7+7}</p> 
+                
+                <button onClick={()=> {
+                    alert('Hello World')
+                }}>Click Me</button>
+            </div>
+        )
     }
     let rootContainer = document.getElementById("main");
 
