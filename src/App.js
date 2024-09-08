@@ -1,14 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Image_2 from "./assests/image-2.jpg";
+import { useState } from "react"; //react hook
 
 function App() {
+  let [name, setName] = useState("Lin Sat Naing"); //useState will return array [getter,setterFun]. Destructuring and store in var.
+  function nameChange() {
+    setName("Aung Aung");
+    console.log(name); //Lin Sat Naing / Because setterFun have running time, js will skip to console.log while setterFun running.
+  }
   return (
-    <div>
-      <h3>Image 1</h3>
-      <img src="/image.jpg" />
-      <h3>Image 2</h3>
-      <img src={Image_2} />
+    <div className="app">
+      <h3>Hello {name}</h3>
+      <button onClick={nameChange}>Click Me</button>
     </div>
   );
 }
